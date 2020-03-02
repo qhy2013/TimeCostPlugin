@@ -3,10 +3,13 @@ apply plugin: 'groovy'
 dependencies {
     implementation gradleApi()
     implementation localGroovy()
-    implementation 'com.android.tools.build:gradle:3.3.2'
+    implementation 'com.android.tools.build:gradle:3.6.0'
 }
 
 repositories {
-    jcenter()
     google()
+    // 解决jcenter()下载慢的问题，用下面两个替换
+    maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+    maven { url 'http://maven.aliyun.com/nexus/content/repositories/jcenter' }
+    maven { url 'http://mvn.mob.com/android/' }
 }
