@@ -19,6 +19,7 @@ public class Test {
     public void handle() {
         String methodName = new Throwable().getStackTrace()[1].getMethodName();
         System.out.println(methodName);
+        System.out.println("new add log");
         TimeManager.addStartTime(methodName, System.nanoTime());
         TimeManager.addEndTime(methodName, System.nanoTime());
         TimeManager.calcuteTime(methodName);

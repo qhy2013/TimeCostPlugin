@@ -36,6 +36,10 @@ public class MethodTotal extends ClassVisitor {
                     mv.visitLdcInsn("this is asm input");
                     mv.visitMethodInsn(INVOKEVIRTUAL, "java/io/PrintStream", "println", "(Ljava/lang/String;)V", false);
 
+                    mv.visitFieldInsn(GETSTATIC, "java/lang/System", "out", "Ljava/io/PrintStream;");
+                    mv.visitLdcInsn("new add log");
+                    mv.visitMethodInsn(INVOKEVIRTUAL, "java/io/PrintStream", "println", "(Ljava/lang/String;)V", false);
+
                     mv.visitTypeInsn(NEW, "java/lang/Throwable");
                     mv.visitInsn(DUP);
                     mv.visitMethodInsn(INVOKESPECIAL, "java/lang/Throwable", "<init>", "()V", false);
